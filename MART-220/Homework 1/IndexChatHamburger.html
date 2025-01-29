@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger with p5.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <script>
+        function setup() {
+            createCanvas(400, 400);
+            noLoop();
+        }
+
+        function draw() {
+            background(220);
+
+            // Top Bun
+            fill(230, 180, 80);
+            ellipse(200, 150, 180, 80);
+            
+            // Lettuce (Green Wavy Shape)
+            fill(50, 205, 50);
+            beginShape();
+            for (let i = 0; i < 10; i++) {
+                let x = 120 + i * 20;
+                let y = 190 + sin(i * 0.5) * 10;
+                vertex(x, y);
+            }
+            vertex(280, 190);
+            endShape(CLOSE);
+
+            // Tomato
+            fill(255, 50, 50);
+            rect(140, 200, 120, 10, 5);
+
+            // Patty
+            fill(150, 75, 0);
+            rect(130, 215, 140, 25, 5);
+
+            // Bottom Bun
+            fill(230, 180, 80);
+            ellipse(200, 250, 160, 50);
+        }
+    </script>
+</body>
+</html>
