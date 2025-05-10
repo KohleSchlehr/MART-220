@@ -27,21 +27,18 @@ var img3ySpeed = 10;
 let myFont;
 
 // timer variable
-var timerValue = 60;
+var timerValue = 600;
 
 function preload() {
-  img1 = loadImage('images/Burger.jpg');
-  img2 = loadImage('images/Fries.jpg');
-  img3 = loadImage('images/AI Shake.webp');
-  myFont = loadFont('fonts/RubikBurned-Regular.ttf');
+  img1 = loadImage('../images/Burger.jpg');
+  img2 = loadImage('../images/Fries.jpg');
+  img3 = loadImage('../images/AI Shake.webp');
+  myFont = loadFont('../fonts/RubikBurned-Regular.ttf');
 }
 
 function setup()
 {
     createCanvas(800,600);
-    image(img1, 0, 0);
-    image(img2, 0, 0);
-    image(img3, 0, 0);
     textFont(myFont);
     setInterval(timeIt, 1000);
 }
@@ -55,6 +52,9 @@ function mouseClicked()
 function draw()
 {
     background(120);
+    image(img1, 100, 200, 50, 50);
+    image(img2, 100, 350, 50, 50);
+    image(img3, img3x, img3y, 75, 75);
 
     // The Meat
     fill(150, 75, 0);
@@ -143,10 +143,10 @@ function draw()
     circle(SesameSeedX, SesameSeedY, 10);
 
     //timer
-    if (timerValue >= 60) {
+    if (timerValue >= 600) {
         text("0:" + timerValue, width / 2, height / 2);
       }
-      if (timerValue < 60) {
+      if (timerValue < 600) {
         text('0:0' + timerValue, width / 2, height / 2);
       }
       if (timerValue == 0) {
